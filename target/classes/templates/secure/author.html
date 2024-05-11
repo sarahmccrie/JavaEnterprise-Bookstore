@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Books Page</title>
+	<!-- Author:      Sarah McCrie 991405606
+        Program:      final
+    -->
+	<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}" />
+</head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<div th:replace="header :: headerFragment"></div>
+	<h1>Authors</h1>
+		<form th:action="@{/secure/author}" method="post">
+
+		<div class="labelAndInput">
+			<label class="label">Author First Name:</label>
+			<input type="text" name="firstName" placeholder="Enter First Name" required />
+		</div>
+		<br>
+		<div class="labelAndInput">
+			<label class="label">Author Last Name:</label>
+			<input type="text" name="lastName" placeholder="Enter Last Name" required />
+		</div>
+		<input type="submit" class="search" value="Add Author" />
+	</form>
+	<div>
+		<table>
+			<tr>
+				<th>Author Id</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+
+			<tr th:each="aAuthor : ${authorList}">
+				<td th:text="${aAuthor.authorId}"></td>
+				<td th:text="${aAuthor.firstName}"></td>
+				<td th:text="${aAuthor.lastName}"> </td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+</body>
+
+</html>

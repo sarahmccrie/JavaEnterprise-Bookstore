@@ -1,0 +1,12 @@
+<div id="authorData" style="display: none;" th:data-authors="${authorList}"></div>
+
+<script>
+window.onload = function() {
+ 
+    var authorDataElement = document.getElementById('authorData');
+    var authors = JSON.parse(authorDataElement.getAttribute('data-authors'));
+
+ 
+    console.log(authors);
+};
+</script>

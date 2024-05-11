@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Books Page</title>
+	<!-- Author:      Sarah McCrie 991405606
+        Program:      final
+    -->
+	<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css" th:href="@{/css/style.css}" />
+</head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<div th:replace="header :: headerFragment"></div>
+	<h1>Books</h1>
+	<form th:action="@{/secure/book}" method="post">
+
+		<div class="labelAndInput">
+			<label class="label">Book Name:</label>
+			<input type="text" name="title" placeholder="Enter Book Title" required />
+		</div>
+		<br>
+		<div class="labelAndInput">
+			<label class="label">Category Name:</label>
+			<input type="text" name="categoryName" placeholder="Enter Category Name" required />
+		</div>
+		<input type="submit" class="search" value="Add Book" />
+	</form>
+
+	<div>
+		<table>
+			<tr>
+				<th>Book ID</th>
+				<th>Book Title</th>
+				<th>Category Name</th>
+			</tr>
+
+			<tr th:each="aBook : ${bookList}">
+				<td th:text="${aBook.bookId}"></td>
+				<td th:text="${aBook.title}"></td>
+				<td th:text="${aBook.categoryName}"> </td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+</body>
+
+</html>

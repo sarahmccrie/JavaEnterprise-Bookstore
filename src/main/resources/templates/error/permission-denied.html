@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<title>Permission Denied</title>
+
+<body>
+    
+    <h1>Permission Denied!!!</h1>
+    <p>You do not have access to this page.</p>
+     <p><a href="#" th:href="@{/}">Back to Home page</a></p>
+    <form method="post" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+    </form>
+   
+	
+</body>
+
+</html>

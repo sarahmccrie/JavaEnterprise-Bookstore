@@ -14,12 +14,13 @@
 <body>
     <th:block th:fragment="unsecureHeaderFragment">
         <header>
+			<img class="bookImage" th:src="@{/images/book.jpg}" alt="Book Image" />
             <div class="linkHolder">
                 <a href="#" th:href="@{/}">Home</a>
                 <a href="#" th:href="@{/login}">Login</a>
                 <a href="#" th:href="@{/register}"> Sign Up </a>
             </div>
-            <img class="bookImage" th:src="@{/images/book.jpg}" alt="Book Image" />
+            
         </header>
     </th:block>
 </body>

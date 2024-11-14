@@ -14,16 +14,17 @@
 <body>
     <th:block th:fragment="headerFragment">
         <header>
+			<img class="bookImage" th:src="@{/images/book.jpg}" alt="Book Image" />
             <div class="linkHolder">
                 <a href="#" th:href="@{/secure}">Home</a>
                 <a href="#" th:href="@{/secure/book}">Book </a>
                 <a href="#" th:href="@{/secure/author}">Author</a>
                 <a href="#" th:href="@{/secure/searchBook}">Search Book</a>
                 <form method="post" th:action="@{/logout}">
-                    <input class="logoutButton" type="submit" value="Logout" />
+                    <input class="logoutButton" type="submit" value="Logout"  />
                 </form>
             </div>
-            <img class="bookImage" th:src="@{/images/book.jpg}" alt="Book Image" />
+            
         </header>
     </th:block>
 </body>

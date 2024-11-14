@@ -11,39 +11,35 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-	<div th:replace="header :: headerFragment"></div>
-	<h1>Search Books</h1>
-	<form method="post" action="#" th:action="@{/secure/searchBook}"     th:object="${book}">
+    <div th:replace="~{header :: headerFragment}"></div>
+    <div class="container">
+        <h1>Search Books</h1>
+        <div class="form-container">
+            <form method="post" th:action="@{/secure/searchBook}" th:object="${book}">
+                <div class="labelAndInput">
+                    <label class="label">ID:</label>
+                    <input type="number" class="searchId" th:field="*{bookId}" />
+                </div>
+                <br>
+                <input type="submit" class="smallCenteredButton" value="Search" id="search" />
+            </form>
+        </div>
 
-		<div class="labelAndInput"> <label class="label">ID:</label> <input type="number" class="searchId"
-				th:field="*{bookId}" /> </div> <br>
-
-		<input type="submit" class="search" value="Search" id="search" />
-
-	</form>
-
-	<div th:if="${isIdMatching==true}" class="tableArea">
-		<table>
-			<tr>
-				<th>Book ID</th>
-				<th>Book Title</th>
-				<th>Category Name</th>
-			</tr>
-
-			<tr th:each="aBook : ${bookList}">
-				<td th:text="${aBook.bookId}"></td>
-				<td th:text="${aBook.title}"></td>
-				<td th:text="${aBook.categoryName}"> </td>
-			</tr>
-		</table>
-	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-
+        <div th:if="${isIdMatching==true}" class="tableArea">
+            <table>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Title</th>
+                    <th>Category Name</th>
+                </tr>
+                <tr th:each="aBook : ${bookList}">
+                    <td th:text="${aBook.bookId}"></td>
+                    <td th:text="${aBook.title}"></td>
+                    <td th:text="${aBook.categoryName}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 
 </html>
